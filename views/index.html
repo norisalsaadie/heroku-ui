@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+<body>
+  <div class="container">
+    <h1>DEVELOPMENT APP</h1>
+    <button class="index">Index</button>
+    <button class="users">Users</button>
+    <button class="headlines">Headlines</button>
+    <div class="content"></div>
+  </div>
+  <script>
+    const options = {
+      method: 'GET',
+      cache: 'no-cache',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    }
+    document.querySelector('button.index').addEventListener('click', (e) => {
+      window
+        .fetch('https://api-node-app-prod.herokuapp.com/', options)
+        .then(response => response.json())
+        .then(({ message }) => document.querySelector('.content').innerHTML = message)
+        .catch(e => alert('ALERT ERROR ERROR'))
+    })
+    document.querySelector('button.users').addEventListener('click', (e) => {
+      window
+        .fetch('https://api-node-app-prod.herokuapp.com/users', options)
+        .then(response => response.json())
+        .then(({ users }) => document.querySelector('.content').innerHTML = users)
+        .catch(e => alert('ALERT ERROR ERROR'))
+    })
+    document.querySelector('button.headlines').addEventListener('click', (e) => {
+      window
+        .fetch('https://api-node-app-prod.herokuapp.com/headlines', options)
+        .then(response => response.json())
+        .then(({ headlines }) => document.querySelector('.content').innerHTML = headlines)
+        .catch(e => alert('ALERT ERROR ERROR'))
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "heroku-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norisalsaadie/heroku-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/norisalsaadie/heroku-ui/issues"
+  },
+  "homepage": "https://github.com/norisalsaadie/heroku-ui#readme",
+  "devDependencies": {
+    "ava": "^0.22.0"
+  },
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
